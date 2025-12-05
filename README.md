@@ -21,21 +21,20 @@ All information is saved in the **database.db** file, which is managed by **SQLi
 
 ## 🖼️ Application Preview
 
-Below is a screenshot of the main interface running locally:
+Below is a screenshot of the main interface and the other interface running locally:
 
+
+## 👨‍🎓👩‍🎓 Student Data Entry Page
+<p align="center">
+  <img src="images/Student_data_Entry.png" alt="List Students" width="850">
+</p>
+
+
+## 🗂️ Student Records
 <p align="center">
   <img src="images/listStudents.png" alt="List Students" width="850">
 </p>
 
----
-
-## 🎨 PDF Example
-
-A visual overview of the PDF Report of the app:
-
-<p align="center">
-  <img src="images/screenshot-pdf-example.png" alt="Streamlit App Screenshot" width="850">
-</p>
 
 
 ---
@@ -45,7 +44,7 @@ A visual overview of the PDF Report of the app:
 | Category | Tools / Libraries |
 |-----------|-------------------|
 | **Flask Framework** | [Flask](https://flask-dev.readthedocs.io/en) |
-| **Language** | Python 3.14.0 |
+| **Language** | Python **3.14.0** | [Python](https://www.python.org/)
 
 ---
 

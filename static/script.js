@@ -1,4 +1,21 @@
 function validateSelection(editUrl) {
+    // Gets the selected radio button
+    const selected = document.querySelector("input[name='selected']:checked");
+
+    if (!selected) {
+        // Here you can use your custom alert if you prefer
+        alert("Please select a row before clicking Edit.");
+        return;
+    }
+
+    // Builds the URL: /edit?student_id=123
+    const urlWithId = `${editUrl}?student_id=${selected.value}`;
+    alert("Row before ." + urlWithId);
+
+    window.location.href = urlWithId;
+}
+
+function validateSelection(editUrl) {
     // Gets all checkboxes in the table
     const checkboxes = document.querySelectorAll("input[name='selected']");
 
@@ -25,21 +42,4 @@ function showAlert(message) {
 
 function closeAlert() {
     document.getElementById("customAlert").style.display = "none";
-}
-
-function validateSelection(editUrl) {
-    // pega o radio selecionado
-    const selected = document.querySelector("input[name='selected']:checked");
-
-    if (!selected) {
-        // aqui você pode usar o seu custom alert se quiser
-        alert("Please select a row before clicking Edit.");
-        return;
-    }
-
-    // monta a URL: /edit?student_id=123
-    const urlWithId = `${editUrl}?student_id=${selected.value}`;
-    alert("Row before ." + urlWithId);
-
-    window.location.href = urlWithId;
 }

@@ -8,7 +8,7 @@ table {
 
 th {
     background-color: #cfe8ff;
-    /* azul claro */
+    /* light blue */
     padding: 8px;
     text-align: center;
     font-weight: bold;
@@ -40,20 +40,20 @@ td.select-col,
 th.select-col {
     text-align: center;
     width: 30px;
-    /* opcional: define largura padrão */
+    /* optional: sets default width */
 }
 
-/* 🔵 Efeito ao passar o mouse nas linhas */
+/* 🔵 Hover effect on table rows */
 tr:hover {
     background-color: #f2faff;
-    /* leve azul claro para destacar */
+    /* light blue highlight */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-    /* sombra suave */
+    /* soft shadow */
     transform: scale(1.01);
-    /* leve aumento opcional */
+    /* slight zoom-in effect */
 }
 
-/* Faz a transição ficar suave */
+/* Smooth transition for hover effect */
 tr {
     transition: all 0.2s ease-in-out;
 }
@@ -66,28 +66,28 @@ a {
 }
 
 /* Buttons Configuration */
-/* Container dos botões */
+/* Button container */
 .button-container {
     display: flex;
     justify-content: center;
-    /* Centraliza os botões como na imagem */
+    /* Centers buttons as shown in the image */
     gap: 20px;
-    /* Espaço entre os botões */
+    /* Space between buttons */
     margin-top: 25px;
 }
 
 .button-container-left {
     display: flex;
     justify-content: flex-start;
-    /* Alinha à esquerda */
+    /* Aligns to the left */
     gap: 15px;
-    /* Espaço entre os botões */
+    /* Space between buttons */
     margin-top: 15px;
     margin-left: 15%;
-    /* Opcional: alinha com a tabela */
+    /* Optional: aligns with the table */
 }
 
-/* Estilo padrão para ambos os botões */
+/* Default style for both buttons */
 .btn {
     padding: 10px 20px;
     text-decoration: none;
@@ -99,28 +99,28 @@ a {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.20);
 }
 
-/* Botão Edit */
+/* Edit Button */
 .btn.edit {
     background-color: #007bff;
-    /* Azul padrão web */
+    /* Standard web blue */
     color: white;
 }
 
-/* Botão Home */
+/* Home Button */
 .btn.home {
     background-color: #28a745;
-    /* Verde padrão web */
+    /* Standard web green */
     color: white;
 }
 
-/* Efeito hover */
+/* Hover effect */
 .btn:hover {
     opacity: 0.85;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.30);
 }
 
-/* Título da tabela */
+/* Table Title */
 .table-title-row .table-title {
     text-align: center;
     font-size: 24px;
@@ -130,7 +130,7 @@ a {
     background-color: #f2f8ff;
 }
 
-/* Cabeçalho da tabela */
+/* Table Header */
 .header-row th {
     background-color: #dce9f9;
     font-weight: bold;
@@ -138,7 +138,7 @@ a {
     padding: 8px;
 }
 
-/* Estilo geral da tabela */
+/* General Table Style */
 .student-table {
     width: 70%;
     border-collapse: collapse;
@@ -152,12 +152,12 @@ a {
 
 .card-header {
     background: #e3f2fd;
-    /* azul claro */
+    /* light blue */
     margin: -24px -24px 16px;
-    /* “cola” o cabeçalho nas bordas do card */
+    /* attaches the header to the card edges */
     padding: 16px 24px;
     border-radius: 12px 12px 0 0;
-    /* arredonda só em cima, igual ao card */
+    /* rounded only at the top */
     border-bottom: 1px solid #d7dde6;
 }
 
@@ -168,10 +168,9 @@ a {
     font-weight: 700;
 }
 
-
 .btn-back {
     background: #e53935;
-    /* vermelho */
+    /* red */
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -183,7 +182,7 @@ a {
 
 .btn-back:hover {
     background: #c62828;
-    /* vermelho mais escuro no hover */
+    /* darker red on hover */
     transform: translateY(-1px);
 }
 
@@ -192,3 +191,49 @@ a {
 }
 
 /** CSS Edit Student Page **/
+
+/* ===== Home Page Style ===== */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    margin: 0;
+}
+
+/* Central Card on Home Page */
+.home-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 24px 32px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* Main Title */
+.home-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+/* Centered image with ideal size */
+.home-image {
+    max-width: 400px;
+    /* ideal and responsive size */
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* Container for links/buttons */
+.home-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}

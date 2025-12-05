@@ -2,13 +2,25 @@
 <html>
 
 <head>
-    <title>Home</title>
+    <title>Home - Student Data Entry</title>
+    <!-- importing the CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
-    <a href="{{ url_for('new_student') }}">Add New Record</a>
-    <br /><br />
-    <a href="{{ url_for('list_records') }}">Show All Records</a>
+    <div class="home-container">
+        <h1 class="home-title">Student Data Entry</h1>
+
+        <img
+            src="{{ url_for('static', filename='images/student_data_entry_illustration.png') }}"
+            alt="Student Data Entry Illustration"
+            class="home-image" >
+
+        <div class="home-links">
+            <a href="{{ url_for('new_student') }}" class="btn home">Add New Record</a>
+            <a href="{{ url_for('list_records') }}" class="btn edit">Show All Records</a>
+        </div>
+    </div>
 </body>
 
 </html>
