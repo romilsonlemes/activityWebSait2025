@@ -50,8 +50,8 @@ Below is a screenshot of the main interface and the other interface running loca
 
 | Category | Tools / Libraries |
 |-----------|-------------------|
-| **Flask Framework** | [Flask](https://flask-dev.readthedocs.io/en) |
-| **Language** | Python **3.14.0** | [Python](https://www.python.org/)  |
+| **Flask Framework:** | [Flask](https://flask-dev.readthedocs.io/en) |
+| **Language:** | [Python](https://www.python.org) |
 
 ---
 
