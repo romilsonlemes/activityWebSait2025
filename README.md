@@ -73,3 +73,13 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+## 🛢️ Prepare Database
+
+### 1. Create the student table to store the information:
+
+To create the database table inside the database folder, simply run the following command:
+
+```
+python app.py
+
+```

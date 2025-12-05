@@ -27,7 +27,7 @@
             background: #fff;
             padding: 24px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px hsla(12, 88%, 50%, 0.08);
             width: min(720px, 90vw);
         }
 
@@ -152,7 +152,10 @@
 
 <body>
     <main class="card">
-        <h1>New Student Information</h1>
+        <div class="card-header">
+            <h1 class="card-title">New Student Information</h1>
+        </div>
+
         <form action="{{ url_for('add_rec')}}" method="POST">
             <div class="grid">
                 <div class="field name">
@@ -179,7 +182,7 @@
             <div class="actions">
                 <button type="reset" class="btn-back" onclick="window.location.href='{{ url_for('home') }}'">
                     Go Back To Home
-                </button>                
+                </button>
                 <button type="submit">Add Student</button>
             </div>
         </form>

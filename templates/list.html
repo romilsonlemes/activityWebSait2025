@@ -48,6 +48,7 @@
     <!-- Buttons near  -->
     <div class="button-container-left">
         <a class="btn edit" href="#" onclick="validateSelection('{{ url_for('edit_student') }}')">Edit</a>
+        <a class="btn delete" href="#" onclick="return validateDelete('{{ url_for('delete_student') }}')">Delete</a>
         <a class="btn home" href="{{ url_for('home') }}">Go Back to Home</a>
     </div>
 

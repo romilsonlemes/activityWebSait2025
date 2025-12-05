@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import sqlite3 as sql
 
 app = Flask(__name__)
@@ -11,6 +11,8 @@ def home():
 # @app.route('/static/<path:path>')
 # def static_files(path):
 #     return app.send_static_file(path)
+
+DB_PATH = "database/database.db"
 
 @app.route('/enternew')
 def new_student():
@@ -28,7 +30,7 @@ def add_rec():
             city = request.form['city']
             pin = request.form['pincode']
 
-            con = sql.connect('database/database.db')
+            con = sql.connect(DB_PATH)
             cur = con.cursor()
             cur.execute(
                 "INSERT INTO students (name, address, city, pin) VALUES (?, ?, ?, ?)",
@@ -48,7 +50,7 @@ def add_rec():
         
 @app.route('/list')
 def list_records():
-    con = sql.connect("database/database.db")
+    con = sql.connect(DB_PATH)
     con.row_factory = sql.Row
     cur = con.cursor()
     cur.execute("SELECT * FROM students")
@@ -59,16 +61,59 @@ def list_records():
 
 
 # New route for Edit
-
 @app.route('/edit')
 def edit_student():
-    # tablerow
-    # msg = ""
-    # con = None
-    # if request.method == 'POST':
-    #     try:    
-    return render_template("editStudent.html") #, tablerow=tablerow)
-    # return "Edit page coming soon!"
+    student_id = request.args.get('student_id', type=int)
+    if not student_id:
+        # if no one record was selected, it returns to the list
+        return redirect(url_for('list_records'))
+
+    con = sql.connect(DB_PATH)
+    con.row_factory = sql.Row
+    cur = con.cursor()
+    cur.execute("SELECT * FROM students WHERE id = ?", (student_id,))
+    student = cur.fetchone()
+    con.close()
+
+    if student is None:
+        return redirect(url_for('list_records'))
+
+    # send the record to the template
+    return render_template("editStudent.html", student=student)
+
+# update records
+@app.route('/update', methods=['POST'])
+def update_student():
+    student_id = request.form['ID']
+    name = request.form['name']
+    address = request.form['address']
+    city = request.form['city']
+    pincode = request.form['pincode']
+
+    con = sql.connect(DB_PATH)
+    cur = con.cursor()
+    cur.execute(
+        "UPDATE students SET name = ?, address = ?, city = ?, pin = ? WHERE id = ?",
+        (name, address, city, pincode, student_id),
+    )
+    con.commit()
+    con.close()
+    return redirect(url_for('list_records'))
+
+
+@app.route('/delete')
+def delete_student():
+    student_id = request.args.get('student_id', type=int)
+    if not student_id:
+        return redirect(url_for('list_records'))
+
+    con = sql.connect("database/database.db")
+    cur = con.cursor()
+    cur.execute("DELETE FROM students WHERE id = ?", (student_id,))
+    con.commit()
+    con.close()
+
+    return redirect(url_for('list_records'))
 
 if __name__ == '__main__':
     app.run(debug=True)
