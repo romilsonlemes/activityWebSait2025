@@ -26,7 +26,7 @@ Below is a screenshot of the main interface and the other interface running loca
 
 ## 👨‍🎓👩‍🎓 Student Data Entry Page
 <p align="center">
-  <img src="images/Student_data_Entry.png" alt="List Students" width="850">
+  <img src="images/student_data_Entry.png" alt="List Students" width="850">
 </p>
 
 
