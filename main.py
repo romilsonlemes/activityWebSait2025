@@ -28,7 +28,7 @@ def add_rec():
             city = request.form['city']
             pin = request.form['pincode']
 
-            con = sql.connect('database.db')
+            con = sql.connect('database/database.db')
             cur = con.cursor()
             cur.execute(
                 "INSERT INTO students (name, address, city, pin) VALUES (?, ?, ?, ?)",
@@ -48,7 +48,7 @@ def add_rec():
         
 @app.route('/list')
 def list_records():
-    con = sql.connect("database.db")
+    con = sql.connect("database/database.db")
     con.row_factory = sql.Row
     cur = con.cursor()
     cur.execute("SELECT * FROM students")

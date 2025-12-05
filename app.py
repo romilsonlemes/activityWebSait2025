@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('database/database.db')
 print("Database connected successfully")
 
 #Create a table if it doesn't exist
