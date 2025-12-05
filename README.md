@@ -29,6 +29,10 @@ Below is a screenshot of the main interface and the other interface running loca
   <img src="images/student_data_Entry.png" alt="List Students" width="850">
 </p>
 
+## 👨‍🎓👩‍🎓 New Student Page
+<p align="center">
+  <img src="images/addNewStudents.png" alt="List Students" width="850">
+</p>
 
 ## 🗂️ Student Records
 <p align="center">
