@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='extraStyle.css') }}">
+
+    <!-- Functionality to include JS if needed  -->
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+
+    <!--***-->
+</head>
+
+<body>
+    <div class="button-container">
+        <table class="student-table">
+            <!-- <table> -->
+            <thead>
+                <tr>
+                    <th colspan="6" class="table-title">Student List</th>
+                </tr>
+                <tr>
+                    <th class="select-col">-</th> <!-- New Column -->
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Pincode</th>
+                </tr>
+            </thead>
+            {% for row in rows %}
+            <tr>
+                <!-- Checkbox com name -->
+                <td class="select-col">
+                    <input type="radio" name="selected" value="{{ row['ID'] }}">
+                </td>
+                <td>{{ row['ID'] }}</td>
+                <td>{{ row['name'] }}</td>
+                <td>{{ row['address'] }}</td>
+                <td>{{ row['city'] }}</td>
+                <td>{{ row['pin'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <!-- Buttons near  -->
+    <div class="button-container-left">
+        <a class="btn edit" href="#" onclick="validateSelection('{{ url_for('edit_student') }}')">Edit</a>
+        <a class="btn home" href="{{ url_for('home') }}">Go Back to Home</a>
+    </div>
+
+    <!-- End Customization -->
+
+    <!--Start Custom-Alert-Box -->
+    <div id="customAlert" class="custom-alert">
+        <div class="custom-alert-box">
+            <p id="alertMessage"></p>
+            <button onclick="closeAlert()">OKAY</button>
+        </div>
+    </div>
+    <!--End Custom-Alert-Box -->
+
+    <!-- End Customization -->
+</body>
+
+</html>
